@@ -694,18 +694,31 @@ button { cursor: pointer; border: none; background: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   GRID VARIANT — 3 columns
+   ═══════════════════════════════════════════════ */
+.metrics-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ═══════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════ */
+
+/* ── Tablet landscape / small desktop ── */
 @media (max-width: 1200px) {
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-  .chart-grid   { grid-template-columns: 1fr; }
-  .tech-grid    { grid-template-columns: 1fr 1fr; }
+  .metrics-grid   { grid-template-columns: repeat(2, 1fr); }
+  .metrics-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .chart-grid     { grid-template-columns: 1fr; }
+  .tech-grid      { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── Tablet portrait ── */
 @media (max-width: 1024px) {
   .two-col   { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
+  /* Sidebar off-canvas */
   .mobile-toggle { display: flex; }
   .sidebar {
     left: calc(-1 * var(--sidebar-w));
@@ -715,19 +728,95 @@ button { cursor: pointer; border: none; background: none; }
   .sidebar.mobile-open { left: 0; }
   .sidebar.collapsed   { left: calc(-1 * var(--sidebar-w)); }
   .main-wrapper { margin-left: 0 !important; }
+
+  /* Topbar */
   .topbar-username { display: none; }
+
+  /* Content */
   .content { padding: 20px 16px; }
-  .metrics-grid { grid-template-columns: 1fr; }
-  .two-col      { grid-template-columns: 1fr; }
-  .tech-grid    { grid-template-columns: 1fr; }
-  .case-grid    { grid-template-columns: 1fr; }
-  .page-header  { flex-direction: column; align-items: flex-start; }
+
+  /* Grids → single column */
+  .metrics-grid,
+  .metrics-grid-3,
+  .two-col,
+  .tech-grid,
+  .case-grid { grid-template-columns: 1fr; }
+
+  /* Page header */
+  .page-header { flex-direction: column; align-items: flex-start; }
+  .page-header-text h1 { font-size: 20px; }
+  .page-header-text p  { font-size: 13px; }
+
+  /* Section cards */
   .section-header { padding: 14px 16px; }
   .section-body.padded { padding: 16px; }
-  .data-table th, .data-table td { padding: 10px 14px; }
+
+  /* Tables — compact cells + hint scroll */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .data-table th, .data-table td { padding: 10px 14px; font-size: 13px; }
+
+  /* Horizontal bars */
   .h-bar-label { width: 90px; font-size: 12px; }
+
+  /* Metric cards */
+  .metric-value { font-size: 24px; }
+
+  /* Buttons — minimum 44px touch target */
+  .btn { min-height: 44px; padding: 10px 16px; }
+  .btn-sm { min-height: 36px; padding: 8px 12px; }
+  .btn-group { gap: 8px; }
+
+  /* Case panels */
+  .case-panel { padding: 16px; }
+  .case-meta-row { font-size: 13px; }
+
+  /* Intervention cards */
+  .intervention-card { padding: 16px; }
+  .intervention-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .intervention-student { font-size: 14px; }
+
+  /* Charts */
+  .chart-container-fixed { height: 220px; }
+  .chart-container-sm    { height: 200px; }
+
+  /* Architecture SVG */
+  .arch-svg-wrapper { padding: 16px 0; }
+  .arch-svg-wrapper svg { min-width: 320px; }
+
+  /* Donut stats */
+  .donut-ring { width: 60px; height: 60px; }
+  .donut-value { font-size: 14px; }
+  .donut-stat { gap: 14px; }
 }
+
+/* ── Small phones ── */
 @media (max-width: 480px) {
-  .content { padding: 16px 12px; }
-  .topbar  { padding: 0 14px; }
+  .content { padding: 14px 10px; }
+  .topbar  { padding: 0 12px; }
+
+  .page-header-text h1 { font-size: 18px; }
+  .metric-card { padding: 16px; }
+  .metric-value { font-size: 22px; }
+  .metric-label { font-size: 12px; }
+
+  .section-header h2 { font-size: 14px; }
+  .section-header { padding: 12px 14px; }
+  .section-body.padded { padding: 14px; }
+
+  /* Tables — further compact */
+  .data-table th, .data-table td { padding: 8px 10px; font-size: 12px; white-space: nowrap; }
+
+  /* Buttons — stack vertically in groups */
+  .btn-group { flex-direction: column; }
+  .btn-group .btn { width: 100%; justify-content: center; }
+
+  /* Timeline */
+  .tl-title { font-size: 13px; }
+  .tl-desc  { font-size: 12px; }
+
+  /* Footer */
+  .footer { font-size: 11px; padding: 16px 0 12px; }
+
+  /* School badge */
+  .school-badge { font-size: 12px; }
 }
