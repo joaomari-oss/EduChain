@@ -19,9 +19,17 @@ Ou, usando o GitHub CLI para criar e enviar em um único passo:
 gh repo create <username>/<repo> --public --source=. --remote=origin --push
 ```
 
-2. Após o push, o workflow do GitHub Actions (`.github/workflows/deploy-pages.yml`) fará o deploy automático para o GitHub Pages. Aguarde alguns minutos e verifique em Settings → Pages.
+2. No GitHub, abra Settings → Pages e em "Source" selecione `GitHub Actions`.
 
-3. Se quiser usar um domínio próprio, adicione o arquivo `CNAME` na raiz com seu domínio e configure DNS conforme o guia do GitHub.
+3. Após o push, o workflow do GitHub Actions (`.github/workflows/deploy-pages.yml`) fará o deploy automático para o GitHub Pages. Aguarde alguns minutos e acompanhe em Actions.
+
+4. Se um workflow falhar com mensagem sobre `actions/upload-artifact: v3`, atualize para o padrão atual do GitHub Pages:
+
+- `actions/configure-pages@v5`
+- `actions/upload-pages-artifact@v4`
+- `actions/deploy-pages@v4`
+
+5. Se quiser usar um domínio próprio, adicione o arquivo `CNAME` na raiz com seu domínio e configure DNS conforme o guia do GitHub.
 
 Se quiser, eu posso:
 - Gerar um arquivo `CNAME` vazio; ou
