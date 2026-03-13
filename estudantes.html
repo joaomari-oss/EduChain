@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduChain — Monitoramento de Estudantes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="logo-icon">EC</div>
+        <span class="sidebar-brand">EduChain</span>
+      </a>
+      <button class="sidebar-toggle-btn" id="sidebarToggle" title="Colapsar menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Principal</div>
+      <a href="index.html" class="sidebar-link" data-tooltip="Painel">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="sidebar-label-text">Painel</span>
+      </a>
+      <a href="estudantes.html" class="sidebar-link" data-tooltip="Estudantes">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="sidebar-label-text">Estudantes</span>
+      </a>
+      <a href="analises.html" class="sidebar-link" data-tooltip="Análises">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span class="sidebar-label-text">Análises</span>
+      </a>
+      <a href="intervencoes.html" class="sidebar-link" data-tooltip="Intervenções">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="sidebar-label-text">Intervenções</span>
+      </a>
+      <a href="arquitetura.html" class="sidebar-link" data-tooltip="Arquitetura">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span class="sidebar-label-text">Arquitetura</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-info"><span class="sidebar-label-text">v2.4.1 — 2025</span></div>
+    </div>
+  </aside>
+
+  <div class="main-wrapper" id="mainWrapper">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="school-badge">
+          <span class="school-dot"></span>
+          Escola Estadual São Paulo
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-user">
+          <span class="topbar-username">Administrador</span>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-header">
+        <div class="page-header-text">
+          <h1>Monitoramento de Estudantes</h1>
+          <p>Análise de risco de evasão escolar com base em frequência, desempenho e predição por IA</p>
+        </div>
+        <button class="btn btn-outline btn-sm">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exportar CSV
+        </button>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Painel de Risco — Todos os Estudantes</h2>
+          <span style="font-size:12px;color:var(--gray-400)">6 registros</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nome do Estudante</th>
+                <th>Frequência</th>
+                <th>Desempenho</th>
+                <th>Score IA</th>
+                <th>Nível de Risco</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>João Silva</td>
+                <td>72%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:40%;background:var(--red)"></div></div><span class="perf-label">Baixo</span></div></td>
+                <td>0,87</td>
+                <td><span class="badge badge-high"><span class="badge-dot"></span>Alto</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-joao')">Ver Caso</button></td>
+              </tr>
+              <tr>
+                <td>Maria Oliveira</td>
+                <td>81%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:55%;background:var(--yellow)"></div></div><span class="perf-label">Médio</span></div></td>
+                <td>0,63</td>
+                <td><span class="badge badge-medium"><span class="badge-dot"></span>Médio</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-maria')">Ver Caso</button></td>
+              </tr>
+              <tr>
+                <td>Pedro Santos</td>
+                <td>93%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:88%;background:var(--green)"></div></div><span class="perf-label">Alto</span></div></td>
+                <td>0,12</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Baixo</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-pedro')">Ver Caso</button></td>
+              </tr>
+              <tr>
+                <td>Ana Costa</td>
+                <td>68%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:35%;background:var(--red)"></div></div><span class="perf-label">Baixo</span></div></td>
+                <td>0,91</td>
+                <td><span class="badge badge-high"><span class="badge-dot"></span>Alto</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-ana')">Ver Caso</button></td>
+              </tr>
+              <tr>
+                <td>Lucas Ferreira</td>
+                <td>85%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:62%;background:var(--yellow)"></div></div><span class="perf-label">Médio</span></div></td>
+                <td>0,44</td>
+                <td><span class="badge badge-medium"><span class="badge-dot"></span>Médio</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-lucas')">Ver Caso</button></td>
+              </tr>
+              <tr>
+                <td>Beatriz Lima</td>
+                <td>96%</td>
+                <td><div class="perf-bar-container"><div class="perf-bar-track"><div class="perf-bar-fill" style="width:92%;background:var(--green)"></div></div><span class="perf-label">Alto</span></div></td>
+                <td>0,08</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Baixo</span></td>
+                <td><button class="btn btn-outline btn-sm" onclick="toggleCase('case-beatriz')">Ver Caso</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Painel: João Silva -->
+        <div class="case-panel" id="case-joao">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">João Silva</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">72%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--red)">0,87 — Alto</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">9º Ano</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Unidade Escolar</span><span class="case-meta-value">EE São Paulo — Unidade 3</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <ul class="pattern-list">
+                <li>Queda de frequência nas últimas 6 semanas</li>
+                <li>Queda de desempenho em 3 avaliações consecutivas</li>
+                <li>Aumento de faltas às segundas e sextas-feiras</li>
+              </ul>
+              <h3 style="margin-top:20px">Ações Recomendadas</h3>
+              <ul class="action-list">
+                <li>Notificar a coordenação escolar</li>
+                <li>Encaminhar estudante ao serviço de assistência social</li>
+                <li>Ativar programa de retenção estudantil</li>
+              </ul>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group">
+                <button class="btn btn-primary">Notificar Coordenação</button>
+                <button class="btn btn-primary">Encaminhar ao Social</button>
+                <button class="btn btn-outline" onclick="toggleCase('case-joao')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel: Maria Oliveira -->
+        <div class="case-panel" id="case-maria">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">Maria Oliveira</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">81%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--yellow)">0,63 — Médio</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">7º Ano</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <ul class="pattern-list">
+                <li>Frequência irregular nas últimas 3 semanas</li>
+                <li>Leve queda de desempenho em Matemática</li>
+              </ul>
+              <h3 style="margin-top:20px">Ações Recomendadas</h3>
+              <ul class="action-list">
+                <li>Agendar reunião com estudante e família</li>
+                <li>Monitorar frequência nas próximas 2 semanas</li>
+              </ul>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group">
+                <button class="btn btn-primary">Agendar Reunião</button>
+                <button class="btn btn-outline" onclick="toggleCase('case-maria')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel: Pedro Santos -->
+        <div class="case-panel" id="case-pedro">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">Pedro Santos</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">93%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--green)">0,12 — Baixo</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">8º Ano</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <p style="font-size:14px;color:var(--green)">Nenhum padrão de risco detectado. Estudante com bom desempenho.</p>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group"><button class="btn btn-outline" onclick="toggleCase('case-pedro')">Fechar</button></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel: Ana Costa -->
+        <div class="case-panel" id="case-ana">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">Ana Costa</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">68%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--red)">0,91 — Alto</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">6º Ano</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <ul class="pattern-list">
+                <li>Absenteísmo crônico por 4 semanas consecutivas</li>
+                <li>Reprovação em 2 de 4 disciplinas na última avaliação</li>
+                <li>Sem participação em atividades extracurriculares</li>
+              </ul>
+              <h3 style="margin-top:20px">Ações Recomendadas</h3>
+              <ul class="action-list">
+                <li>Encaminhamento imediato ao orientador escolar</li>
+                <li>Contato com a família via serviço social</li>
+                <li>Ativar programa de retenção e apoio tutorial</li>
+              </ul>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group">
+                <button class="btn btn-primary">Encaminhar ao Orientador</button>
+                <button class="btn btn-primary">Contatar Família</button>
+                <button class="btn btn-outline" onclick="toggleCase('case-ana')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel: Lucas Ferreira -->
+        <div class="case-panel" id="case-lucas">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">Lucas Ferreira</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">85%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--yellow)">0,44 — Médio</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">8º Ano</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <ul class="pattern-list">
+                <li>Queda gradual de frequência nos últimos 2 meses</li>
+                <li>Desempenho abaixo da média em Português e História</li>
+              </ul>
+              <h3 style="margin-top:20px">Ações Recomendadas</h3>
+              <ul class="action-list">
+                <li>Incluir na lista de monitoramento de frequência</li>
+                <li>Oferecer apoio acadêmico suplementar</li>
+              </ul>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group">
+                <button class="btn btn-outline">Adicionar ao Monitoramento</button>
+                <button class="btn btn-outline" onclick="toggleCase('case-lucas')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Painel: Beatriz Lima -->
+        <div class="case-panel" id="case-beatriz">
+          <div class="case-grid">
+            <div class="case-block">
+              <h3>Perfil do Estudante</h3>
+              <div class="case-meta">
+                <div class="case-meta-row"><span class="case-meta-label">Estudante</span><span class="case-meta-value">Beatriz Lima</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Frequência</span><span class="case-meta-value">96%</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Score de Risco</span><span class="case-meta-value" style="color:var(--green)">0,08 — Baixo</span></div>
+                <div class="case-meta-row"><span class="case-meta-label">Série</span><span class="case-meta-value">9º Ano</span></div>
+              </div>
+            </div>
+            <div class="case-block">
+              <h3>Padrões Detectados pela IA</h3>
+              <p style="font-size:14px;color:var(--green)">Nenhum padrão de risco detectado. Estudante com bom desempenho.</p>
+            </div>
+            <div class="case-actions">
+              <div class="btn-group"><button class="btn btn-outline" onclick="toggleCase('case-beatriz')">Fechar</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">EduChain · Plataforma de Monitoramento Educacional · Protótipo v2.0</div>
+    </main>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

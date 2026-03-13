@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduChain — Painel de Monitoramento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ════════ SIDEBAR ════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="logo-icon">EC</div>
+        <span class="sidebar-brand">EduChain</span>
+      </a>
+      <button class="sidebar-toggle-btn" id="sidebarToggle" title="Colapsar menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Principal</div>
+      <a href="index.html" class="sidebar-link" data-tooltip="Painel">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="sidebar-label-text">Painel</span>
+      </a>
+      <a href="estudantes.html" class="sidebar-link" data-tooltip="Estudantes">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="sidebar-label-text">Estudantes</span>
+      </a>
+      <a href="analises.html" class="sidebar-link" data-tooltip="Análises">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span class="sidebar-label-text">Análises</span>
+      </a>
+      <a href="intervencoes.html" class="sidebar-link" data-tooltip="Intervenções">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="sidebar-label-text">Intervenções</span>
+      </a>
+      <a href="arquitetura.html" class="sidebar-link" data-tooltip="Arquitetura">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span class="sidebar-label-text">Arquitetura</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-info">
+        <span class="sidebar-label-text">v2.4.1 — 2025</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ════════ MAIN ════════ -->
+  <div class="main-wrapper" id="mainWrapper">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="school-badge">
+          <span class="school-dot"></span>
+          Escola Estadual São Paulo
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-user">
+          <span class="topbar-username">Administrador</span>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-header">
+        <div class="page-header-text">
+          <h1>Painel de Monitoramento</h1>
+          <p>Monitoramento em tempo real, predição de risco e rastreamento de intervenções institucionais</p>
+        </div>
+      </div>
+
+      <!-- Métricas -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon icon-blue">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="metric-label">Total de Estudantes Monitorados</div>
+          <div class="metric-value">2.847</div>
+          <div class="metric-sub">Em 12 unidades escolares</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-green">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="metric-label">Taxa de Frequência</div>
+          <div class="metric-value">84,3%</div>
+          <div class="metric-sub">Média móvel de 7 dias</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-red">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="metric-label">Estudantes em Risco</div>
+          <div class="metric-value">142</div>
+          <div class="metric-sub">Sinalizados por IA para risco de evasão</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-yellow">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="metric-label">Intervenções Este Mês</div>
+          <div class="metric-value">38</div>
+          <div class="metric-sub">23 resolvidas · 15 em andamento</div>
+        </div>
+      </div>
+
+      <!-- Tabela de Risco Rápida -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Estudantes com Maior Risco</h2>
+          <a href="estudantes.html" class="btn btn-outline btn-sm">Ver Todos →</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nome do Estudante</th>
+                <th>Frequência</th>
+                <th>Desempenho</th>
+                <th>Score IA</th>
+                <th>Nível de Risco</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana Costa</td>
+                <td>68%</td>
+                <td>
+                  <div class="perf-bar-container">
+                    <div class="perf-bar-track"><div class="perf-bar-fill" style="width:35%;background:var(--red)"></div></div>
+                    <span class="perf-label">Baixo</span>
+                  </div>
+                </td>
+                <td>0,91</td>
+                <td><span class="badge badge-high"><span class="badge-dot"></span>Alto</span></td>
+                <td><a href="estudantes.html" class="btn btn-outline btn-sm">Ver Caso</a></td>
+              </tr>
+              <tr>
+                <td>João Silva</td>
+                <td>72%</td>
+                <td>
+                  <div class="perf-bar-container">
+                    <div class="perf-bar-track"><div class="perf-bar-fill" style="width:40%;background:var(--red)"></div></div>
+                    <span class="perf-label">Baixo</span>
+                  </div>
+                </td>
+                <td>0,87</td>
+                <td><span class="badge badge-high"><span class="badge-dot"></span>Alto</span></td>
+                <td><a href="estudantes.html" class="btn btn-outline btn-sm">Ver Caso</a></td>
+              </tr>
+              <tr>
+                <td>Maria Oliveira</td>
+                <td>81%</td>
+                <td>
+                  <div class="perf-bar-container">
+                    <div class="perf-bar-track"><div class="perf-bar-fill" style="width:55%;background:var(--yellow)"></div></div>
+                    <span class="perf-label">Médio</span>
+                  </div>
+                </td>
+                <td>0,63</td>
+                <td><span class="badge badge-medium"><span class="badge-dot"></span>Médio</span></td>
+                <td><a href="estudantes.html" class="btn btn-outline btn-sm">Ver Caso</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Intervenções Recentes -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Intervenções Recentes</h2>
+          <a href="intervencoes.html" class="btn btn-outline btn-sm">Ver Histórico →</a>
+        </div>
+        <div class="section-body padded">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-rail">
+                <div class="tl-dot dot-red"></div>
+                <div class="tl-line"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-title">Detecção de Risco — Ana Costa</div>
+                <div class="tl-desc">Sistema identificou score de risco de evasão de 0,91 com base em padrões de frequência e desempenho.</div>
+                <div class="tl-time">2026-03-10 · 09:22</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-rail">
+                <div class="tl-dot"></div>
+                <div class="tl-line"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-title">Programa de Retenção Ativado — João Silva</div>
+                <div class="tl-desc">Estudante matriculado no programa institucional de retenção com tutoria acadêmica.</div>
+                <div class="tl-time">2026-03-07 · 10:00</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-rail">
+                <div class="tl-dot dot-yellow"></div>
+              </div>
+              <div class="tl-content">
+                <div class="tl-title">Encaminhamento Social — João Silva</div>
+                <div class="tl-desc">Caso encaminhado ao departamento municipal de assistência social.</div>
+                <div class="tl-time">2026-03-03 · 14:32</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">EduChain · Plataforma de Monitoramento Educacional · Protótipo v2.0</div>
+    </main>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduChain — Análises e Indicadores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="logo-icon">EC</div>
+        <span class="sidebar-brand">EduChain</span>
+      </a>
+      <button class="sidebar-toggle-btn" id="sidebarToggle" title="Colapsar menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Principal</div>
+      <a href="index.html" class="sidebar-link" data-tooltip="Painel">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="sidebar-label-text">Painel</span>
+      </a>
+      <a href="estudantes.html" class="sidebar-link" data-tooltip="Estudantes">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="sidebar-label-text">Estudantes</span>
+      </a>
+      <a href="analises.html" class="sidebar-link" data-tooltip="Análises">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span class="sidebar-label-text">Análises</span>
+      </a>
+      <a href="intervencoes.html" class="sidebar-link" data-tooltip="Intervenções">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="sidebar-label-text">Intervenções</span>
+      </a>
+      <a href="arquitetura.html" class="sidebar-link" data-tooltip="Arquitetura">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span class="sidebar-label-text">Arquitetura</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-info"><span class="sidebar-label-text">v2.4.1 — 2025</span></div>
+    </div>
+  </aside>
+
+  <div class="main-wrapper" id="mainWrapper">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="school-badge">
+          <span class="school-dot"></span>
+          Escola Estadual São Paulo
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-user">
+          <span class="topbar-username">Administrador</span>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-header">
+        <div class="page-header-text">
+          <h1>Análises e Indicadores</h1>
+          <p>Visão consolidada dos indicadores de frequência, risco e desempenho por unidade escolar</p>
+        </div>
+      </div>
+
+      <!-- Métricas -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon icon-blue">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="metric-label">Unidades Escolares</div>
+          <div class="metric-value">12</div>
+          <div class="metric-sub">Monitoradas ativas</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-green">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div class="metric-label">Taxa Média de Frequência</div>
+          <div class="metric-value">84,3%</div>
+          <div class="metric-sub">+2,1% vs. mês anterior</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-red">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="metric-label">Taxa de Risco Geral</div>
+          <div class="metric-value">5,0%</div>
+          <div class="metric-sub">142 de 2.847 estudantes</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon icon-yellow">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          </div>
+          <div class="metric-label">Intervenções Resolvidas</div>
+          <div class="metric-value">23</div>
+          <div class="metric-sub">De 38 no mês atual</div>
+        </div>
+      </div>
+
+      <!-- Chart: Tendência + Rosca -->
+      <div class="chart-grid">
+        <div class="section-card" style="margin-bottom:0">
+          <div class="section-header">
+            <h2>Tendência — Frequência &amp; Risco (12 meses)</h2>
+          </div>
+          <div class="section-body padded">
+            <div class="chart-container-fixed">
+              <canvas id="attendanceTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="section-card" style="margin-bottom:0">
+          <div class="section-header">
+            <h2>Distribuição de Risco</h2>
+          </div>
+          <div class="section-body padded">
+            <div class="chart-container-sm">
+              <canvas id="riskDonutChart"></canvas>
+            </div>
+            <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--gray-100)">
+              <div class="stat-row"><span class="stat-row-label">Total monitorado</span><span class="stat-row-value">2.847</span></div>
+              <div class="stat-row"><span class="stat-row-label">Score médio de risco</span><span class="stat-row-value">0,24</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart: Barras por unidade -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Frequência por Unidade Escolar</h2>
+        </div>
+        <div class="section-body padded">
+          <div class="chart-container-fixed">
+            <canvas id="unitBarChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicadores de Desempenho (CSS) -->
+      <div class="two-col">
+        <div class="section-card" style="margin-bottom:0">
+          <div class="section-header"><h2>Indicadores de Desempenho</h2></div>
+          <div class="section-body padded">
+            <div class="donut-stat">
+              <div class="donut-ring" style="background: conic-gradient(var(--green) 0% 68%, var(--gray-200) 68% 100%)">
+                <div class="donut-value">68%</div>
+              </div>
+              <div class="donut-info">
+                <div class="donut-info-label">Aprovação Geral</div>
+                <div class="donut-info-sub">Estudantes com desempenho acima da média</div>
+              </div>
+            </div>
+            <div class="donut-stat">
+              <div class="donut-ring" style="background: conic-gradient(var(--blue) 0% 84%, var(--gray-200) 84% 100%)">
+                <div class="donut-value">84%</div>
+              </div>
+              <div class="donut-info">
+                <div class="donut-info-label">Frequência Adequada</div>
+                <div class="donut-info-sub">Estudantes com presença acima de 75%</div>
+              </div>
+            </div>
+            <div class="donut-stat">
+              <div class="donut-ring" style="background: conic-gradient(var(--yellow) 0% 61%, var(--gray-200) 61% 100%)">
+                <div class="donut-value">61%</div>
+              </div>
+              <div class="donut-info">
+                <div class="donut-info-label">Eficácia de Intervenção</div>
+                <div class="donut-info-sub">Casos resolvidos após intervenção da IA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detalhamento por Unidade (tabela) -->
+        <div class="section-card" style="margin-bottom:0">
+          <div class="section-header"><h2>Detalhamento por Unidade</h2></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Unidade</th>
+                  <th>Alunos</th>
+                  <th>Freq.</th>
+                  <th>Baixo</th>
+                  <th>Médio</th>
+                  <th>Alto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Unidade 1 — Centro</td><td>487</td><td>91%</td><td><span class="badge badge-low">412</span></td><td><span class="badge badge-medium">62</span></td><td><span class="badge badge-high">13</span></td></tr>
+                <tr><td>Unidade 2 — Leste</td><td>523</td><td>87%</td><td><span class="badge badge-low">398</span></td><td><span class="badge badge-medium">104</span></td><td><span class="badge badge-high">21</span></td></tr>
+                <tr><td>Unidade 3 — Norte</td><td>412</td><td>84%</td><td><span class="badge badge-low">286</span></td><td><span class="badge badge-medium">98</span></td><td><span class="badge badge-high">28</span></td></tr>
+                <tr><td>Unidade 4 — Sul</td><td>396</td><td>82%</td><td><span class="badge badge-low">268</span></td><td><span class="badge badge-medium">99</span></td><td><span class="badge badge-high">29</span></td></tr>
+                <tr><td>Unidade 5 — Oeste</td><td>541</td><td>79%</td><td><span class="badge badge-low">342</span></td><td><span class="badge badge-medium">171</span></td><td><span class="badge badge-high">28</span></td></tr>
+                <tr><td>Unidade 6 — Periferia</td><td>488</td><td>73%</td><td><span class="badge badge-low">250</span></td><td><span class="badge badge-medium">215</span></td><td><span class="badge badge-high">23</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">EduChain · Plataforma de Monitoramento Educacional · Protótipo v2.0</div>
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+<script src="js/charts.js"></script>
+</body>
+</html>

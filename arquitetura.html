@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduChain — Arquitetura do Sistema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="logo-icon">EC</div>
+        <span class="sidebar-brand">EduChain</span>
+      </a>
+      <button class="sidebar-toggle-btn" id="sidebarToggle" title="Colapsar menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-title">Principal</div>
+      <a href="index.html" class="sidebar-link" data-tooltip="Painel">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="sidebar-label-text">Painel</span>
+      </a>
+      <a href="estudantes.html" class="sidebar-link" data-tooltip="Estudantes">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="sidebar-label-text">Estudantes</span>
+      </a>
+      <a href="analises.html" class="sidebar-link" data-tooltip="Análises">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span class="sidebar-label-text">Análises</span>
+      </a>
+      <a href="intervencoes.html" class="sidebar-link" data-tooltip="Intervenções">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="sidebar-label-text">Intervenções</span>
+      </a>
+      <a href="arquitetura.html" class="sidebar-link" data-tooltip="Arquitetura">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <span class="sidebar-label-text">Arquitetura</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-info"><span class="sidebar-label-text">v2.4.1 — 2025</span></div>
+    </div>
+  </aside>
+
+  <div class="main-wrapper" id="mainWrapper">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="school-badge">
+          <span class="school-dot"></span>
+          Escola Estadual São Paulo
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-user">
+          <span class="topbar-username">Administrador</span>
+          <div class="avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-header">
+        <div class="page-header-text">
+          <h1>Arquitetura do Sistema</h1>
+          <p>Visão técnica da infraestrutura do EduChain: IoT, IA e Blockchain integrados</p>
+        </div>
+      </div>
+
+      <!-- Diagrama SVG -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Fluxo de Dados — Arquitetura EduChain</h2>
+        </div>
+        <div class="arch-svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 760" width="520" height="760" font-family="Inter, system-ui, sans-serif">
+
+            <!-- Node 1: Estudantes -->
+            <rect x="60" y="20" width="400" height="100" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+            <rect x="60" y="20" width="6" height="100" rx="3" fill="#94a3b8"/>
+            <text x="90" y="52" font-size="13" font-weight="600" fill="#1e293b">Estudantes / Salas de Aula</text>
+            <text x="90" y="72" font-size="12" fill="#64748b">Presença física nos ambientes escolares</text>
+            <text x="90" y="92" font-size="11" fill="#94a3b8">Origem dos dados</text>
+
+            <!-- Arrow 1 -->
+            <line x1="260" y1="120" x2="260" y2="138" stroke="#cbd5e1" stroke-width="2"/>
+            <polygon points="254,130 260,142 266,130" fill="#cbd5e1"/>
+
+            <!-- Node 2: IoT -->
+            <rect x="60" y="142" width="400" height="100" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+            <rect x="60" y="142" width="6" height="100" rx="3" fill="#2563eb"/>
+            <text x="90" y="172" font-size="13" font-weight="600" fill="#1e293b">Sensores IoT de Frequência</text>
+            <text x="90" y="192" font-size="12" fill="#64748b">Dispositivos RFID / biométricos coletando dados</text>
+            <text x="90" y="208" font-size="12" fill="#64748b">de presença em tempo real</text>
+            <text x="90" y="228" font-size="11" fill="#2563eb">Camada 1 — IoT</text>
+
+            <!-- Arrow 2 -->
+            <line x1="260" y1="242" x2="260" y2="260" stroke="#cbd5e1" stroke-width="2"/>
+            <polygon points="254,252 260,264 266,252" fill="#cbd5e1"/>
+
+            <!-- Node 3: Plataforma de Dados -->
+            <rect x="60" y="264" width="400" height="100" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+            <rect x="60" y="264" width="6" height="100" rx="3" fill="#10b981"/>
+            <text x="90" y="294" font-size="13" font-weight="600" fill="#1e293b">Plataforma de Coleta de Dados</text>
+            <text x="90" y="314" font-size="12" fill="#64748b">Ingestão, normalização e armazenamento de dados</text>
+            <text x="90" y="330" font-size="12" fill="#64748b">de frequência e desempenho</text>
+            <text x="90" y="350" font-size="11" fill="#10b981">PostgreSQL / API REST</text>
+
+            <!-- Arrow 3 -->
+            <line x1="260" y1="364" x2="260" y2="382" stroke="#cbd5e1" stroke-width="2"/>
+            <polygon points="254,374 260,386 266,374" fill="#cbd5e1"/>
+
+            <!-- Node 4: IA -->
+            <rect x="60" y="386" width="400" height="100" rx="12" fill="#fefce8" stroke="#fde68a" stroke-width="1.5"/>
+            <rect x="60" y="386" width="6" height="100" rx="3" fill="#f59e0b"/>
+            <text x="90" y="416" font-size="13" font-weight="600" fill="#1e293b">Modelo Preditivo de IA</text>
+            <text x="90" y="436" font-size="12" fill="#64748b">Machine learning para predição de risco de evasão</text>
+            <text x="90" y="452" font-size="12" fill="#64748b">com acurácia mensurável</text>
+            <text x="90" y="472" font-size="11" fill="#d97706">Python / scikit-learn · Camada 2 — IA</text>
+
+            <!-- Arrow 4 -->
+            <line x1="260" y1="486" x2="260" y2="504" stroke="#cbd5e1" stroke-width="2"/>
+            <polygon points="254,496 260,508 266,496" fill="#cbd5e1"/>
+
+            <!-- Node 5: Blockchain -->
+            <rect x="60" y="508" width="400" height="100" rx="12" fill="#fdf2f8" stroke="#f5d0fe" stroke-width="1.5"/>
+            <rect x="60" y="508" width="6" height="100" rx="3" fill="#a855f7"/>
+            <text x="90" y="538" font-size="13" font-weight="600" fill="#1e293b">Sistema de Registro Blockchain</text>
+            <text x="90" y="558" font-size="12" fill="#64748b">Ledger imutável armazenando registros de intervenção</text>
+            <text x="90" y="574" font-size="12" fill="#64748b">e ações institucionais distribuídas</text>
+            <text x="90" y="594" font-size="11" fill="#a855f7">Hyperledger Fabric · Camada 3 — Blockchain</text>
+
+            <!-- Arrow 5 -->
+            <line x1="260" y1="608" x2="260" y2="626" stroke="#cbd5e1" stroke-width="2"/>
+            <polygon points="254,618 260,630 266,618" fill="#cbd5e1"/>
+
+            <!-- Node 6: Intervenção -->
+            <rect x="60" y="630" width="400" height="100" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+            <rect x="60" y="630" width="6" height="100" rx="3" fill="#ef4444"/>
+            <text x="90" y="660" font-size="13" font-weight="600" fill="#1e293b">Intervenção Institucional</text>
+            <text x="90" y="680" font-size="12" fill="#64748b">Escolas e órgãos governamentais atuando com base</text>
+            <text x="90" y="696" font-size="12" fill="#64748b">nas recomendações da IA</text>
+            <text x="90" y="716" font-size="11" fill="#ef4444">Resultado — Prevenção da evasão escolar</text>
+
+          </svg>
+        </div>
+      </div>
+
+      <!-- Componentes Técnicos -->
+      <div class="section-card">
+        <div class="section-header"><h2>Componentes Técnicos</h2></div>
+        <div class="section-body padded">
+          <div class="tech-grid">
+            <div class="tech-card">
+              <div class="tech-card-label">Camada 1</div>
+              <h4>Camada IoT</h4>
+              <p>Coleta dados de presença em sala de aula utilizando sensores RFID e biométricos implantados nas unidades escolares. Os dados são transmitidos em tempo real para a plataforma central de coleta via protocolos seguros.</p>
+            </div>
+            <div class="tech-card">
+              <div class="tech-card-label">Camada 2</div>
+              <h4>Camada de IA</h4>
+              <p>Analisa padrões comportamentais e acadêmicos utilizando modelos de machine learning treinados com dados históricos de matrícula, frequência e desempenho para predizer risco de evasão com acurácia mensurável.</p>
+            </div>
+            <div class="tech-card">
+              <div class="tech-card-label">Camada 3</div>
+              <h4>Camada Blockchain</h4>
+              <p>Armazena registros de intervenção institucional em ledger distribuído resistente à adulteração, garantindo total auditabilidade, integridade dos dados e conformidade com requisitos de prestação de contas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Especificações Técnicas -->
+      <div class="section-card">
+        <div class="section-header"><h2>Especificações Técnicas</h2></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Componente</th>
+                <th>Tecnologia</th>
+                <th>Função</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sensores IoT</td>
+                <td>RFID UHF / Biometria</td>
+                <td>Coleta de presença em tempo real</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Operacional</span></td>
+              </tr>
+              <tr>
+                <td>Gateway IoT</td>
+                <td>MQTT / TLS 1.3</td>
+                <td>Transmissão segura de dados do sensor</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Operacional</span></td>
+              </tr>
+              <tr>
+                <td>Plataforma de Dados</td>
+                <td>PostgreSQL / API REST</td>
+                <td>Armazenamento e normalização dos dados</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Operacional</span></td>
+              </tr>
+              <tr>
+                <td>Modelo Preditivo</td>
+                <td>Python / scikit-learn</td>
+                <td>Análise de risco de evasão escolar</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Operacional</span></td>
+              </tr>
+              <tr>
+                <td>Blockchain</td>
+                <td>Hyperledger Fabric</td>
+                <td>Registro imutável de intervenções</td>
+                <td><span class="badge badge-medium"><span class="badge-dot"></span>Piloto</span></td>
+              </tr>
+              <tr>
+                <td>Interface Web</td>
+                <td>HTML / CSS / JavaScript</td>
+                <td>Painel de monitoramento e gestão</td>
+                <td><span class="badge badge-low"><span class="badge-dot"></span>Operacional</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nota -->
+      <div class="section-card">
+        <div class="section-body padded">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="flex-shrink:0;width:40px;height:40px;background:var(--blue-soft);border-radius:8px;display:flex;align-items:center;justify-content:center">
+              <svg width="20" height="20" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size:14px;font-weight:600;color:var(--gray-800);margin-bottom:6px">Sobre a Arquitetura</h3>
+              <p style="font-size:13px;color:var(--gray-500);line-height:1.6;max-width:640px">
+                A arquitetura do EduChain foi projetada para integrar coleta de dados em tempo real (IoT), análise preditiva inteligente (IA) e registro institucional seguro (Blockchain) em um fluxo contínuo. O objetivo é permitir que gestores educacionais e órgãos públicos atuem de forma proativa na prevenção da evasão escolar, com dados confiáveis e rastreáveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">EduChain · Plataforma de Monitoramento Educacional · Protótipo v2.0</div>
+    </main>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
