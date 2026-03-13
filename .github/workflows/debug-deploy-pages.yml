@@ -1,0 +1,34 @@
+name: Debug Pages Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print workspace info
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Workspace files:"
+          ls -la
+          echo "Root tree:" 
+          git rev-parse --show-toplevel || true
+          echo "Git status:" 
+          git status --porcelain || true
+
+      - name: Show .github/workflows
+        run: ls -la .github/workflows || true
+
+      - name: Show node/npm (if present)
+        run: |
+          node --version || true
+          npm --version || true
+
+      - name: Try to upload artifact (dry-run)
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
